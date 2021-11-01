@@ -62,7 +62,9 @@ class Item:
         item.last_id +=1
         with open(__item_last_id__,"w") as f:
             f.write(str(item.last_id))
-
+    
+    def get(self,  id):
+        Item.__get_item_by_path(self,f"{__item_folder__}/{id}.db")
 
 
     def __get_item_by_path(item, path):
@@ -123,5 +125,7 @@ if __name__=="__main__":
               item_create(*params)
          elif command  == "all":
               item_all()
+         elif command  == "view":
+              item_view(*params)
 
     
