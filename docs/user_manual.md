@@ -21,3 +21,11 @@ user login <username>
 ```
 user view
 ```
+
+## Item
+
+### Create
+
+```cmd
+item create <name> <price> <selling_price>
+```
