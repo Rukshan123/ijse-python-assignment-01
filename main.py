@@ -20,6 +20,12 @@ def init(arguments):
         if command == "db":
             db()
 
+def login(username):
+    user = username 
+    f = open(__session_file__,"w")
+    f.write(username)
+    f.close()
+
 
 if __name__=="__main__":
     arguments = sys.argv[1:]
@@ -27,5 +33,9 @@ if __name__=="__main__":
     section = arguments[0]
     command = arguments[1]
     params = arguments[2:]
+
+    if section == "user":
+         if command == "login":
+             login(*params )
 
     
