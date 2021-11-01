@@ -87,6 +87,22 @@ class Item:
             items.append(item)
         return items
 
+    def search(self,key,value):
+        items = self.all()
+        result_items = []
+        for item in items:
+            item_value = getattr(item,key)
+            if item_value == value:
+                result_items.append(item)
+        return result_items              
+
+
+    def __repr__(self):
+        return f"id:{self.id},name:{self.name},price:{self.price}" 
+
+    def __str__(self):
+        return f"id:{self.id},name:{self.name},price:{self.price}"
+
 
 
 def item_create(name,price, selling_price): 
@@ -106,3 +122,8 @@ def item_view(id):
     item = Item()
     item.get(id)
     print(item.id,item.name, item.price, item.selling_price)
+
+def item_search(key,value):
+    item = Item()
+    results = item.search(key,value)
+    pprint(results)

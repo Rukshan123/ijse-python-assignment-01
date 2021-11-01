@@ -8,6 +8,7 @@ from app.item import view
 from app.item import item_create
 from app.item import item_all
 from app.item import item_view
+from app.item import item_search
 
 
 
@@ -30,5 +31,7 @@ if __name__=="__main__":
               item_all()
          elif command  == "view":
               item_view(*params)
+         elif command  == "search":
+              item_search(*params)
 
     
