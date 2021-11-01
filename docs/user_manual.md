@@ -29,3 +29,9 @@ user view
 ```cmd
 item create <name> <price> <selling_price>
 ```
+
+### All
+
+```cmd
+item all
+```

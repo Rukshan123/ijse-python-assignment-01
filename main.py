@@ -65,6 +65,28 @@ class Item:
 
 
 
+    def __get_item_by_path(item, path):
+         with open(path , "r") as item_file:  
+            _data_ = json.load(item_file)
+            item.id = _data_["id"]
+            item.name = _data_["name"]
+            item.price = _data_["price"]
+            item.selling_price = _data_["sellingPrice"]
+
+    def all(self):
+        # Get all fil names
+        item_file_names = os.listdir(__item_folder__)
+        items = []
+          # append to array
+        for item_file_name in item_file_names:
+            item = Item()
+            Item.__get_item_by_path(item,f"{__item_folder__}/{item_file_name}")
+                # print(item)
+            items.append(item)
+        return items
+
+
+
 def item_create(name,price, selling_price): 
     item = Item()
     item.name = name
@@ -72,6 +94,16 @@ def item_create(name,price, selling_price):
     item.selling_price = selling_price
     
     item.save()
+
+def item_all():
+    item = Item()
+    items = item.all()
+    pprint(items)
+
+def item_view(id):
+    item = Item()
+    item.get(id)
+    print(item.id,item.name, item.price, item.selling_price)
 
 
 if __name__=="__main__":
@@ -89,5 +121,7 @@ if __name__=="__main__":
     elif section == "item":
          if command == "create":
               item_create(*params)
+         elif command  == "all":
+              item_all()
 
     
