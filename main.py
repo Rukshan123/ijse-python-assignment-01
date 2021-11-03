@@ -10,11 +10,14 @@ from app.item import item_all
 from app.item import item_view
 from app.item import item_search
 
+from app.customer import cus_init
+
 
 
 if __name__=="__main__":
     arguments = sys.argv[1:]
     init(arguments)
+    cus_init(arguments)
     section = arguments[0]
     command = arguments[1]
     params = arguments[2:]
