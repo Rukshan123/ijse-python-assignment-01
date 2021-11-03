@@ -37,7 +37,7 @@ if __name__=="__main__":
               item_view(*params)
          elif command  == "search":
               item_search(*params)
-    elif section == "item":
+    elif section == "customer":
          if command == "save":
               customer_save(*params)
 
