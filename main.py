@@ -11,6 +11,7 @@ from app.item import item_view
 from app.item import item_search
 
 from app.customer import cus_init
+from app.customer import customer_save
 
 
 
@@ -36,5 +37,8 @@ if __name__=="__main__":
               item_view(*params)
          elif command  == "search":
               item_search(*params)
+    elif section == "item":
+         if command == "save":
+              customer_save(*params)
 
     
