@@ -69,6 +69,12 @@ class Customer:
             customers.append(customer)
         return customers
 
+    def __repr__(self):
+        return f"id:{self.id},name:{self.name},address:{self.address},salary:{self.salary},phone:{self.phone}" 
+
+    def __str__(self):
+        return f"id:{self.id},name:{self.name},address:{self.address},salary:{self.salary},phone:{self.phone}" 
+
 
 
 def customer_save(name,address, salary, phone): 
