@@ -4,9 +4,8 @@ import os
 from pprint import pprint
 
 __db_location__ = "db"
-__session_file__  = f"{__db_location__}/session.db"
 __customer_folder__  =  f"{__db_location__}/customer"
-__customer_last_id__  =  f"{__db_location__}/customer_id.db"
+__customer_last_id__  =  f"{__db_location__}/customer/customer_id.db"
 
 def cus_init(arguments):
  
@@ -37,7 +36,7 @@ class Customer:
             "name" : customer.name,
             "address" : customer.address,
             "salary" : customer.salary,
-            "phone" : customer.phone,
+            "phone" : customer.phone
             
         }
         with open(f"{__customer_folder__}/{id}.db","w") as customer_file:
