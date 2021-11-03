@@ -12,6 +12,7 @@ from app.item import item_search
 
 from app.customer import cus_init
 from app.customer import customer_save
+from app.customer import customer_all
 
 
 
@@ -40,5 +41,7 @@ if __name__=="__main__":
     elif section == "customer":
          if command == "save":
               customer_save(*params)
+         elif command  == "all":
+              customer_all()
 
     

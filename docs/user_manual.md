@@ -56,3 +56,9 @@ item search <key> <value>
 ```cmd
 customer save <name> <address> <salary> <phone>
 ```
+
+### All
+
+```cmd
+customer all
+```
