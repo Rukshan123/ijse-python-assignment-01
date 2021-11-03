@@ -48,3 +48,11 @@ item view <id>
 item search <key> <value>
  ex:- item search <price> <200>
 ```
+
+## Customer
+
+### Save
+
+```cmd
+customer save <name> <address> <salary> <phone>
+```
