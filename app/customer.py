@@ -21,6 +21,13 @@ def cus_init(arguments):
             db()
 
 class Customer:
+    def __init__(customer):
+        if os.path.exists(__customer_last_id__):
+            with open(__customer_last_id__, "r") as last_id_f:
+                customer.last_id = int(last_id_f.readline()) 
+        else:
+            customer.last_id = 0
+
     def save(customer):
         id = customer.last_id+1 
 
