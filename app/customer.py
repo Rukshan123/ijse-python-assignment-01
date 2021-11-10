@@ -72,6 +72,17 @@ class Customer:
             customers.append(customer)
         return customers
 
+
+    def search(self,key,value):
+        customer = self.all()
+        result_customer = []
+        for customer in customer:
+            customer_value = getattr(customer,key)
+            if customer_value == value:
+                result_customer.append(customer)
+        return result_customer      
+
+
     def __repr__(self):
         return f"id:{self.id},name:{self.name},address:{self.address},salary:{self.salary},phone:{self.phone}" 
 
@@ -98,3 +109,8 @@ def customer_view(id):
     customer = Customer()
     customer.get(id)
     print(customer.id, customer.name, customer.address, customer.salary, customer.phone)
+
+def customer_search(key,value):
+    customer = Customer()
+    results = customer.search(key,value)
+    pprint(results)

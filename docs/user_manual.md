@@ -68,3 +68,9 @@ customer all
 ```cmd
 customer view <id>
 ```
+
+### Search
+
+```cmd
+customer search <key> <value>
+```
