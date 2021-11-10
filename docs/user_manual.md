@@ -62,3 +62,9 @@ customer save <name> <address> <salary> <phone>
 ```cmd
 customer all
 ```
+
+### View
+
+```cmd
+customer view <id>
+```

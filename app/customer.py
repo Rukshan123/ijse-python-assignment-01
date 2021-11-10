@@ -46,6 +46,9 @@ class Customer:
         with open(__customer_last_id__,"w") as f:
             f.write(str(customer.last_id))
 
+    def get(self,  id):
+        Customer.__get_customer_by_path(self,f"{__customer_folder__}/{id}.db")
+
 
     def __get_customer_by_path(customer, path):
          with open(path , "r") as customer_file:  
@@ -90,3 +93,8 @@ def customer_all():
     customer = Customer()
     customers = customer.all()
     pprint(customers)
+
+def customer_view(id):
+    customer = Customer()
+    customer.get(id)
+    print(customer.id, customer.name, customer.address, customer.salary, customer.phone)

@@ -13,6 +13,7 @@ from app.item import item_search
 from app.customer import cus_init
 from app.customer import customer_save
 from app.customer import customer_all
+from app.customer import customer_view
 
 
 
@@ -43,5 +44,6 @@ if __name__=="__main__":
               customer_save(*params)
          elif command  == "all":
               customer_all()
+         elif command  == "view":
+              customer_view(*params)
 
-    
